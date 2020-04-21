@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
-import reducerAPI from "./Reducers/reducerAPI";
+import rootReducer from "./Reducers/";
 
 // const store = ;
 
-export default createStore(reducerAPI, applyMiddleware(thunk));
+export default createStore(rootReducer, applyMiddleware(thunk));
