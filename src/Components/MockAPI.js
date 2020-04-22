@@ -23,7 +23,22 @@ const MockAPI = (props) => {
     props.postMock(newMock);
   };
   //   console.log(props);
-  return <div></div>;
+  return (
+    <div>
+      <h1>API Get and Post </h1>
+      <form onClick={handlePlus}>
+        <label>
+          new Article{" "}
+          <input type="text" value={mock} name="mock" onChange={handleChange} />
+        </label>
+        <input type="submit" value="Add" />
+      </form>
+
+      {props.mock.map((item, index) => (
+        <li key={index}>{item.name}</li>
+      ))}
+    </div>
+  );
 };
 
 const mapStateToProps = (props) => {
