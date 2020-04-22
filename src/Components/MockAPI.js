@@ -26,7 +26,7 @@ const MockAPI = (props) => {
   return (
     <div>
       <h1>API Get and Post </h1>
-      <form onClick={handlePlus}>
+      <form onSubmit={handlePlus}>
         <label>
           new Article{" "}
           <input type="text" value={mock} name="mock" onChange={handleChange} />
