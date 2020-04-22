@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
-import Mock from "./Pages/Mock";
+import MockAPI from "./Components/MockAPI";
 import Header from "./Components/Header";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/Mock" component={Mock} />
+          <Route path="/MockAPI" component={MockAPI} />
         </Switch>
       </Router>
     </div>

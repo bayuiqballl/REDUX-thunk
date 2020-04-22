@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { postMock, getMockData } from "../Actions/getMock";
 
-function MockAPI() {
+const MockAPI = (props) => {
   const [mock, setMock] = useState("");
 
   useEffect(() => {
@@ -22,9 +22,9 @@ function MockAPI() {
     };
     props.postMock(newMock);
   };
-
+  //   console.log(props);
   return <div></div>;
-}
+};
 
 const mapStateToProps = (props) => {
   return {

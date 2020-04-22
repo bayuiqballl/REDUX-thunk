@@ -25,7 +25,7 @@ const Header = (props) => {
               {" "}
               <button
                 onClick={() => {
-                  props.history.push("/Mock");
+                  props.history.push("/MockAPI");
                 }}
               >
                 Mock
