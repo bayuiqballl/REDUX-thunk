@@ -32,6 +32,18 @@ const Header = (props) => {
               </button>{" "}
             </a>
           </li>
+          <li>
+            <a>
+              {" "}
+              <button
+                onClick={() => {
+                  props.history.push("/Hooks");
+                }}
+              >
+                Hooks
+              </button>{" "}
+            </a>
+          </li>
         </ul>
       </div>
     </div>

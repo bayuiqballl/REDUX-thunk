@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { postMock, getMockData } from "../Actions/getMock";
+import { postMock, getMockData, deleteMock } from "../Actions/getMock";
 
 const MockAPI = (props) => {
   const [mock, setMock] = useState("");
@@ -22,6 +22,11 @@ const MockAPI = (props) => {
     };
     props.postMock(newMock);
   };
+
+  const handleDelete = (id) => {
+    props.deleteMock(id);
+  };
+
   //   console.log(props);
   return (
     <div>
@@ -35,7 +40,16 @@ const MockAPI = (props) => {
       </form>
 
       {props.mock.map((item, index) => (
-        <li key={index}>{item.name}</li>
+        <div>
+          <li key={index}>{item.name}</li>
+          <button
+            onClick={() => {
+              handleDelete(item.id);
+            }}
+          >
+            delete
+          </button>
+        </div>
       ))}
     </div>
   );
@@ -47,6 +61,6 @@ const mapStateToProps = (props) => {
   };
 };
 
-const mapDispatchToProps = { getMockData, postMock };
+const mapDispatchToProps = { getMockData, postMock, deleteMock };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MockAPI);

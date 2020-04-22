@@ -45,3 +45,13 @@ export const postMock = (obj) => {
       .catch((error) => dispatch(MockFailed(error.massage)));
   };
 };
+
+export const deleteMock = (id) => {
+  return function (dispatch) {
+    dispatch(MockBegin());
+    axios
+      .delete(`https://5e9f6f2311b078001679c810.mockapi.io/articles/${id}`)
+      .then(() => dispatch(getMockData()))
+      .catch((error) => dispatch(MockFailed(error.massage)));
+  };
+};
